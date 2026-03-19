@@ -174,9 +174,86 @@ This analysis helps:
 **Ankit Verma**  
 _Data Analyst | Python • Feature Engineering • Data Analysis_
 
-🔗 [LinkedIn](https://www.linkedin.com/in/ankit-verma)  
-🔗 [GitHub](https://github.com/ankitverma)
+🔗 [LinkedIn](https://www.linkedin.com/in/ankitvermads/)  
 
 ---
+
+
+
+---
+
+## 🎤 Interview Explanation:
+
+### 🔹 Problem Understanding
+In this project, I worked on a real-world logistics dataset from Delhivery.  
+The main challenge was that the data coming from data pipelines was **raw, unclean, and not directly usable for analysis or modeling**.
+
+So, my goal was to:
+- Clean and preprocess the data  
+- Create meaningful features  
+- Analyze delivery performance  
+- Prepare the dataset for future ML/forecasting use  
+
+---
+
+### 🔹 Approach Taken
+
+1. **Data Cleaning**
+   - Handled missing values  
+   - Removed or treated outliers  
+   - Standardized column formats  
+   - Converted timestamps into proper datetime format  
+
+2. **Feature Engineering**
+   - Created new features from time and distance columns  
+   - Derived metrics like **delivery delays (actual vs OSRM time)**  
+   - Used segment-level data to understand trip breakdown  
+
+3. **Exploratory Analysis**
+   - Compared **actual vs estimated delivery times**
+   - Analyzed **distance vs time relationships**
+   - Identified inconsistencies in logistics data  
+
+4. **Data Preparation**
+   - Normalized and standardized numerical columns  
+   - Prepared clean dataset for downstream ML models  
+
+---
+
+### 🔹 Key Challenges Faced
+
+- Handling **large number of columns with unclear meaning** (e.g., cutoff_factor, segment_factor)  
+- Dealing with **inconsistent time and distance values**  
+- Understanding the difference between **trip-level and segment-level data**  
+- Identifying and treating **outliers in delivery time and distance**  
+
+---
+
+### 🔹 Key Learnings
+
+- Importance of **data cleaning before any analysis**  
+- How **feature engineering improves model readiness**  
+- Understanding real-world logistics metrics like **OSRM vs actual delivery time**  
+- Breaking down complex datasets into **actionable insights**  
+
+---
+
+### 🔹 Business Impact
+
+- Helps improve **delivery time estimation accuracy**  
+- Identifies **inefficiencies in logistics operations**  
+- Enables better **route optimization strategies**  
+- Provides a clean dataset for **forecasting and ML models**  
+
+---
+
+### 🔹 One-Line Summary (For Recruiters)
+
+> Cleaned and transformed raw logistics data from Delhivery, performed feature engineering, and analyzed delivery performance to generate actionable business insights and prepare data for predictive modeling.
+
+---
+
+
+
 
 ⭐ **If you found this project useful, consider starring the repository!** ⭐
