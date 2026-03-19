@@ -1,56 +1,182 @@
-# Business-Case-Delhivery
+# 🚚 Delhivery Logistics Data Analysis & Feature Engineering
 
-# About Delhivery
+![Python](https://img.shields.io/badge/Python-Data%20Analysis-blue.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
+![Dataset](https://img.shields.io/badge/Dataset-Delhivery_Logistics-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-* Delhivery is the largest and fastest-growing fully integrated player in India by revenue in Fiscal 2021. They aim to build the operating system for commerce, through a combination of world-class infrastructure, logistics operations of the highest quality, and cutting-edge engineering and technology capabilities.
+---
 
-* The Data team builds intelligence and capabilities using this data that helps them to widen the gap between the quality, efficiency, and profitability of their business versus their competitors.
+## 📘 About Delhivery
 
-# How can you help here?
+**Delhivery** is one of India’s largest and fastest-growing logistics companies.  
+It aims to build the **operating system for commerce** by combining:
+- Advanced logistics infrastructure 🚚  
+- High-quality operations ⚙️  
+- Cutting-edge technology & data intelligence 💡  
 
-The company wants to understand and process the data coming out of data engineering pipelines:
+The data team plays a crucial role in improving **efficiency, scalability, and profitability** by leveraging large-scale operational data.
 
-* Clean, sanitize and manipulate data to get useful features out of raw fields
+---
 
-* Make sense out of the raw data and help the data science team to build forecasting models on it
+## 🌍 Project Context
 
-# Dataset
+This project focuses on analyzing **logistics and delivery trip data** generated from Delhivery’s data pipelines.
 
-Dataset Link: https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/551/original/delhivery_data.csv?1642751181
+The dataset contains detailed information about:
+- Trip creation and scheduling  
+- Source and destination hubs  
+- Delivery timelines and distances  
+- OSRM-based route estimations  
+- Segment-level delivery performance  
 
-# Column Profiling:
+The goal is to transform raw operational data into **clean, structured, and meaningful features** for downstream analytics and modeling.
 
-* data - tells whether the data is testing or training data
-* trip_creation_time – Timestamp of trip creation
-* route_schedule_uuid – Unique Id for a particular route schedule
-* route_type – Transportation type
-* FTL – Full Truck Load: FTL shipments get to the destination sooner, as the truck is making no other pickups or drop-offs along the way
-* Carting: Handling system consisting of small vehicles (carts)
-* trip_uuid - Unique ID given to a particular trip (A trip may include different source and destination centers)
-* source_center - Source ID of trip origin
-* source_name - Source Name of trip origin
-* destination_cente – Destination ID
-* destination_name – Destination Name
-* od_start_time – Trip start time
-* od_end_time – Trip end time
-* start_scan_to_end_scan – Time taken to deliver from source to destination
-* is_cutoff – Unknown field
-* cutoff_factor – Unknown field
-* cutoff_timestamp – Unknown field
-* actual_distance_to_destination – Distance in Kms between source and destination warehouse
-* actual_time – Actual time taken to complete the delivery (Cumulative)
-* osrm_time – An open-source routing engine time calculator which computes the shortest path between points in a given map (Includes usual traffic, distance through major and minor roads) and gives the time (Cumulative)
-* osrm_distance – An open-source routing engine which computes the shortest path between points in a given map (Includes usual traffic, distance through major and minor roads) (Cumulative)
-* factor – Unknown field
-* segment_actual_time – This is a segment time. Time taken by the subset of the package delivery
-* segment_osrm_time – This is the OSRM segment time. Time taken by the subset of the package delivery
-* segment_osrm_distance – This is the OSRM distance. Distance covered by subset of the package delivery
-* segment_factor – Unknown field
+---
 
-# Concept Used:
+## 🎯 Objective
 
-* Feature Creation
-* Relationship between Features
-* Column Normalization /Column Standardization
-* Handling categorical values
-* Missing values - Outlier treatment / Types of outliers
+The primary objectives of this project are to:
+
+- Clean and preprocess raw logistics data  
+- Perform **feature engineering** for better analysis  
+- Understand relationships between key variables  
+- Handle missing values and outliers  
+- Prepare the dataset for **data science and forecasting use cases**
+
+---
+
+## ❓ Key Business Questions Answered
+
+- 🚚 How does **actual delivery time compare with estimated (OSRM) time**?  
+- 📍 What factors influence **delivery delays and efficiency**?  
+- ⏱️ How do **segment-level times contribute to total trip duration**?  
+- 📊 Are there inconsistencies or anomalies in logistics data?  
+- 🔍 Which features are most useful for future **prediction models**?  
+
+---
+
+## 📊 Dataset Overview
+
+🔗 Dataset Link:  
+https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/551/original/delhivery_data.csv?1642751181  
+
+| Feature Type | Description |
+|-------------|------------|
+| Time-based | Trip creation, start/end timestamps |
+| Location-based | Source and destination centers |
+| Distance metrics | Actual vs OSRM distances |
+| Time metrics | Actual vs estimated delivery times |
+| Segment-level | Granular trip performance data |
+
+---
+
+## 🧾 Key Features
+
+### ⏱️ Time Features
+- `trip_creation_time`
+- `od_start_time`, `od_end_time`
+- `start_scan_to_end_scan`
+- `actual_time`, `osrm_time`
+
+---
+
+### 📍 Location Features
+- `source_center`, `source_name`
+- `destination_center`, `destination_name`
+- `route_type` (FTL / Carting)
+
+---
+
+### 📏 Distance Metrics
+- `actual_distance_to_destination`
+- `osrm_distance`
+- `segment_osrm_distance`
+
+---
+
+### 🔗 Segment-Level Features
+- `segment_actual_time`
+- `segment_osrm_time`
+- `segment_factor`
+
+---
+
+## 🧹 Data Cleaning & Preprocessing
+
+Key steps performed:
+
+- Handling **missing values**
+- Treating **outliers**
+- Converting timestamps into usable formats
+- Standardizing column formats
+- Cleaning inconsistent or noisy data
+
+---
+
+## 🧠 Feature Engineering
+
+- Created new features from **time and distance fields**
+- Derived insights from **actual vs estimated metrics**
+- Built relationships between **trip-level and segment-level data**
+- Normalized and standardized numerical columns
+
+---
+
+## 🔍 Analysis Scope
+
+### 📊 Delivery Performance Analysis
+- Compared **actual vs OSRM time**
+- Identified delays and inefficiencies
+
+### 🚚 Route Optimization Insights
+- Analyzed differences in **estimated vs actual routes**
+- Evaluated logistics accuracy
+
+### ⏱️ Segment-Level Analysis
+- Studied contribution of segments to total trip time
+- Identified bottlenecks in delivery flow
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Tool | Purpose |
+|------|--------|
+| **Python** | Data analysis & preprocessing |
+| **Pandas** | Data manipulation |
+| **NumPy** | Numerical computations |
+| **Jupyter Notebook** | Analysis environment |
+
+---
+
+## 💡 Key Insights
+
+✅ Identified gaps between **actual and estimated delivery times**  
+✅ Highlighted **data inconsistencies and anomalies**  
+✅ Improved dataset quality through preprocessing  
+✅ Extracted meaningful features for **future modeling**  
+
+---
+
+## 🚀 Business Impact
+
+This analysis helps:
+- Improve **delivery time predictions**
+- Optimize **route planning and logistics**
+- Enhance **data quality for ML models**
+- Support better **operational decision-making**
+
+---
+
+## 👨‍💻 Author
+
+**Ankit Verma**  
+_Data Analyst | Python • Feature Engineering • Data Analysis_
+
+🔗 [LinkedIn](https://www.linkedin.com/in/ankit-verma)  
+🔗 [GitHub](https://github.com/ankitverma)
+
+---
+
+⭐ **If you found this project useful, consider starring the repository!** ⭐
